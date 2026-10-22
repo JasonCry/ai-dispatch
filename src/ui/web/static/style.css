@@ -108,7 +108,7 @@ body {
   font-weight: 600;
   white-space: nowrap;
   position: sticky;
-  top: 49px;
+  top: 0;
   background: var(--bg-card);
 }
 .task-table tbody tr { cursor: pointer; transition: background 150ms; }

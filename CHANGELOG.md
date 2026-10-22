@@ -1,4 +1,5 @@
 ## v11.6.0 (2026-10-22)
+- Web dashboard table headers inside horizontal scroll wrapper align with top: 0 instead of top: 49px, preventing the sticky header from obscuring the first task row and its navigation targets
 - Codex custom provider as a route: a task launched with a user-selected Codex custom provider records it as its own route (`codex-provider:<id>`); quota holds, advice and retry address that route instead of the ChatGPT plan, and a launch, retry or resume is refused when `config.toml` now selects a different route
 - Bare `--verify` uses the project's declared verify command (auto-detection only when none is declared); every verify run persists started and finished events with command, directory, local HEAD, exit code and an output excerpt; NoOp is read only from the agent's final message
 - Remote verify failures are classified from rbox's typed result (`rbox exec --result-file`, rbox 0.7.0 or later) when available, falling back to the text rule; a started-job line in the output always blocks an infrastructure classification
