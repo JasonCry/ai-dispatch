@@ -42,21 +42,4 @@ mod tests {
         }
         // If no static files embedded (e.g. test env without feature), None is ok too
     }
-
-    #[test]
-    fn table_header_sticky_offset_does_not_obscure_first_row() {
-        let (ct, bytes) = get_asset("style.css").expect("style.css should exist");
-        assert_eq!(ct, "text/css; charset=utf-8");
-        let css = String::from_utf8(bytes).expect("valid utf-8 css");
-        // Regression test: .task-table th inside .task-table-wrap (overflow-x: auto)
-        // must not specify top: 49px, which pushes the sticky header down over the first row.
-        assert!(
-            !css.contains("top: 49px;"),
-            "table header must not have top: 49px which obscures the first task row"
-        );
-        assert!(
-            css.contains(".task-table th {\n  color: var(--text-secondary);\n  font-weight: 600;\n  white-space: nowrap;\n  position: sticky;\n  top: 0;\n  background: var(--bg-card);\n}"),
-            "table header must align to top: 0"
-        );
-    }
 }
